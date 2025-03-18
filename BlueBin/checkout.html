@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href= "external-style-sheet.css" />
+    <style>
+        /* CSS styles */
+        body {
+
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            background-image: url("image/background6.png");
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+		align-items: center;
+ padding: 0 20px;
+  font-size: 16px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 45%;
+        }
+        .card1 {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 45%;
+            margin-right: 10px;
+        }
+
+        .order-summary-container {
+            width: 45%;
+            margin-left: auto;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #008CBA;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #008CBA;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005f79;
+        }
+
+        .error {
+            color: red;
+        }
+
+        /* Additional styles for order summary */
+        .order-summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .order-summary-item span:first-child {
+            flex: 1;
+            padding-right: 10px;
+        }
+
+        .order-summary-item span:last-child {
+            flex: 0 0 100px;
+            text-align: right;
+        }
+
+        .order-summary h3 {
+            margin-top: 0;
+            color: #008CBA;
+        }
+
+        .order-summary-total {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 100%;
+            }
+            .card1 {
+                width: 100%;
+                margin-right: 0px;
+            }
+
+            .order-summary-container {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+          <h1 class="logo"><img src="icons/logo1.png" alt="BlueBin Logo"></h1>
+          <nav>
+            <ul class="nav-links">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="profile.html">User Profile</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+              <li><a href="team.html">About Us</a></li>
+              <li><a href="sitemap.html">Sitemap</a></li>
+              <li><a href="content.html">Additional Content</a></li>
+            </ul>
+          </nav>
+          </nav>
+        </div>
+      </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if total value or order summary exists in local storage
+            const total = localStorage.getItem('total');
+            const orderSummary = localStorage.getItem('orderSummary');
+
+            if (!total || !orderSummary) {
+                window.location.replace('shop.html') ; // Redirect to shop.html if not found
+            }
+        });
+    </script>
+
+    <div class="container">
+        <div class="card1">
+            <h2>Checkout <i class="fas fa-shopping-cart"></i></h2>
+            <form id="checkout-form" onsubmit="return validateForm()">
+                <label for="fullname">Full Name<span class="error">*</span></label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="email">Email Address<span class="error">*</span></label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="address">Shipping Address<span class="error">*</span></label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone">
+
+                <label for="total">Total</label>
+                <input type="text" id="total" name="total" readonly>
+
+                <h2 style="margin-top: 30px;">Card Details <i class="far fa-credit-card"></i></h2>
+                <label for="cardNumber">Card Number<span class="error">*</span></label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+
+                <label for="expiryDate">Expiry Date<span class="error">*</span></label>
+                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+
+                <label for="cvv">CVV<span class="error">*</span></label>
+                <input type="text" id="cvv" name="cvv" required>
+
+                <input type="submit" value="Complete Purchase">
+            </form>
+        </div>
+
+        <div class="card order-summary-container">
+            <h2>Order Summary <i class="fas fa-receipt"></i></h2>
+            <div id="order-summary"></div>
+            <div class="order-summary-total" id="order-summary-total"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Retrieve order summary details from local storage
+            const orderSummary = getOrderSummaryFromLocalStorage();
+
+            // Display order summary details
+            displayOrderSummary(orderSummary);
+
+            // Retrieve total value from local storage
+            const total = localStorage.getItem('total');
+            if (total) {
+                document.getElementById('total').value = total;
+            }
+        });
+
+        // Save order summary details to local storage
+        function saveOrderSummaryToLocalStorage(orderSummary) {
+            localStorage.setItem('orderSummary', JSON.stringify(orderSummary));
+        }
+
+        // Retrieve order summary details from local storage
+        function getOrderSummaryFromLocalStorage() {
+            const orderSummary = localStorage.getItem('orderSummary');
+            return orderSummary ? JSON.parse(orderSummary) : [];
+        }
+
+        // Display order summary details
+        function displayOrderSummary(orderSummary) {
+            const orderSummaryContainer = document.getElementById('order-summary');
+            orderSummaryContainer.innerHTML = '';
+
+            orderSummary.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('order-summary-item');
+                itemElement.innerHTML = `
+          <span>${item.name}</span>
+          <span>$${item.price.toFixed(2)}</span>
+        `;
+                orderSummaryContainer.appendChild(itemElement);
+            });
+
+            // Calculate and display total
+            const total = orderSummary.reduce((acc, item) => acc + item.price, 0);
+            document.getElementById('order-summary-total').innerHTML = `<strong>Total:</strong> $${total.toFixed(2)}`;
+        }
+
+        // Form validation
+        function validateForm() {
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+
+            if (!fullname || !email || !address) {
+                alert('Please fill in all mandatory fields in the checkout details.');
+                return false;
+            }
+
+            // Email validation regex
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            // Phone number validation regex
+            const phone = document.getElementById('phone').value;
+            const phonePattern = /^[0-9]{10}$/;
+            if (phone && !phonePattern.test(phone)) {
+                alert('Please enter a valid 10-digit phone number.');
+                return false;
+            }
+
+            // Card details validation
+            const cardNumber = document.getElementById('cardNumber').value;
+            const expiryDate = document.getElementById('expiryDate').value;
+            const cvv = document.getElementById('cvv').value;
+
+            if (!cardNumber || !expiryDate || !cvv) {
+                alert('Please fill in all mandatory fields in the card details.');
+                return false;
+            }
+
+            // Card number validation
+            const cardNumberPattern = /^[0-9]{16}$/;
+            if (!cardNumberPattern.test(cardNumber)) {
+                alert('Please enter a valid 16-digit card number.');
+                return false;
+            }
+
+            // Expiry date validation
+            const expiryDatePattern = /^(0[1-9]|1[0-2])\/[0-9]{2}$/;
+            if (!expiryDatePattern.test(expiryDate)) {
+                alert('Please enter a valid expiry date in MM/YY format.');
+                return false;
+            }
+
+            // CVV validation
+            const cvvPattern = /^[0-9]{3}$/;
+            if (!cvvPattern.test(cvv)) {
+                alert('Please enter a valid 3-digit CVV.');
+                return false;
+            }
+
+            // If all validations pass
+            alert('Checkout details submitted successfully!');
+
+            // Clear local storage
+            localStorage.removeItem('total');
+            localStorage.removeItem('orderSummary');
+            window.location.reload();
+
+            // Prevent form submission for demo purposes
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>

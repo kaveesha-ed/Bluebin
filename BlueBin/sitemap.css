@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #d0e6f0;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  color: #0a5177;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.color-bar {
+  height: 8px;
+  background-color: #4caf50;
+  margin: 0 auto 20px;
+  width: 80%;
+}
+
+.parent-text,
+.child-text {
+  font-size: 14px;
+  fill: #ffffff;
+  text-anchor: middle;
+  -o-table-baseline: middle;
+}
+
+.line {
+  stroke: #12c195;
+  stroke-width: 2;
+}
+
+.child-rect {
+  fill: #119bb4;
+  stroke: #cccccc;
+  stroke-width: 2;
+  transition: fill 0.3s ease;
+}
+
+.parent-rect {
+  fill: #045f62;
+  stroke: #cccccc;
+  stroke-width: 2;
+  transition: fill 0.3s ease;
+}
+
+.parent-text,
+.child-text {
+  fill: #000000;
+  font-size: 14px;
+  font-weight: bold;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.parent-rect:hover,
+.child-rect:hover {
+  fill: #e0e0e0;
+  cursor: pointer;
+}

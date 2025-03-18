@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="gallery-styles.css" />
+    <link rel="stylesheet" href="external-style-sheet.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <div class="logo">
+          <img src="icons/logo1.png" alt="BlueBin Logo" />
+        </div>
+        <nav class="navbar">
+          <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="profile.html">User Profile</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="team.html">About Us</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+            <li><a href="content.html">Additional Content</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+
+<section class="accessibility-section">
+  <div class="color-scheme">
+    <select id="colorModeSelect" onchange="changeColorMode(this)">
+      <option value="light">Light Mode</option>
+      <option value="dark">Dark Mode</option>
+    </select>
+  </div>
+</section>
+
+<section class="hero-section">
+  <div class="background-image"></div>
+</section>
+
+<section class="welcome-section">
+  <h1>Welcome to BlueBin Ocean Conservation Gallery</h1>
+  <h2>Dive Into The Depths Of Marine Life With Us</h2>
+</section>
+
+<section class="slider-section">
+  <div class="slider-item active">
+    <img src="image/img-1.jpg" alt="Life Below Water" />
+    <div class="slider-text">
+      <h3>Life Below Water</h3>
+      <p>
+        Delve into the depths of our oceans, where every dive contributes to
+        the conservation of life below water, in line with SDG goal 14.
+      </p>
+    </div>
+  </div>
+
+  <div class="slider-item active">
+    <img src="image/img-2.jpg" alt="Marine Life Diversity" />
+    <div class="slider-text">
+      <h3>Marine Life Diversity</h3>
+      <p>
+        Experience the rich diversity of marine ecosystems, contributing to
+        SDG 14's goal of protecting life below water.
+      </p>
+    </div>
+  </div>
+
+  <div class="slider-item active">
+    <img src="image/img-3.jpg" alt="Ocean Pollution Awareness" />
+    <div class="slider-text">
+      <h3>Ocean Pollution Awareness</h3>
+      <p>
+        Join the fight against ocean pollution by learning about its causes
+        and consequences, and discover how you can take action to protect
+        our seas for future generations.
+      </p>
+    </div>
+  </div>
+
+  <div class="slider-item active">
+    <img src="image/img-4.jpg" alt="Sustainable Fisheries" />
+    <div class="slider-text">
+      <h3>Sustainable Fisheries</h3>
+      <p>
+        Explore innovative approaches to fisheries management that
+        prioritize conservation, ensuring a healthy balance between human
+        needs and environmental sustainability.
+      </p>
+    </div>
+  </div>
+
+  <div class="slider-item active">
+    <img src="image/img-5.jpg" alt="Eco-Friendly Tourism" />
+    <div class="slider-text">
+      <h3>Eco-Friendly Tourism</h3>
+      <p>
+        Explore destinations that prioritize environmental protection,
+        offering enriching experiences that leave a positive impact on both
+        travelers and the planet.
+      </p>
+    </div>
+  </div>
+
+  <div class="slider-item active">
+    <img src="image/img-6.jpg" alt="Conservation Attempts" />
+    <div class="slider-text">
+      <h3>Conservation Attempts</h3>
+      <p>
+        Be inspired by stories of resilience, innovation, and collaboration,
+        showcasing the incredible achievements of individuals and
+        organizations working to safeguard our oceans.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="gallery-section">
+  <h2 class="title">Marine Conservation Projects</h2>
+
+  <div class="photo-grid">
+    <div class="column">
+      <div class="photo">
+        <img
+          class="grid-image"
+          src="image/img-7.jpg"
+          alt="Blue carbon Project"
+          data-description="BLUE Carbon explores how marine habitats store carbon to combat climate change, partnering with the University of Exeter to identify conservation strategies and advocate for policy recognition."
+        />
+      </div>
+
+
+      <div class="photo">
+          <img
+            class="grid-image"
+            src="image/img-8.png"
+            alt="Blue bin's Global impact"
+            data-description=" This image serves to emphasize Blue Bin's global impact in advancing the mission of ocean conservation and promoting the establishment and effective management of MPAs to safeguard marine biodiversity and combat climate change."
+          />
+        </div>
+
+        <div class="photo">
+          <img
+            class="grid-image"
+            src="image/img-9.jpg"
+            alt="Lyme Bay Project"
+            data-description="Lyme Bay is a success story for sustainable fishing and conservation. It's the UK's largest marine protected area, covering over 200 square kilometers. Since 2012, local fishermen, conservationists, researchers, and regulators have worked together to manage the area. As a result, there's been a 95% increase in reef species and a nearly 400% boost in fish abundance. "
+          />
+        </div>
+
+        <div class="photo">
+          <img
+            class="grid-image"
+            src="image/img-10.jpg"
+            alt="Blue Legal Project"
+            data-description="Blue Bin Foundation secures legal wins against activities in marine protected areas, including challenging Hinkley Point C's impact on marine life and pushing for fishing restrictions in the Dogger Bank."
+          />
+        </div>
+
+        <div class="photo">
+          <img
+            class="grid-image"
+            src="image/img-11.jpg"
+            alt="Blue Legal media Campaigns"
+            data-description="This underscores the campaign's stance against electric fishing practices, emphasizing environmental concerns and advocating for their cessation to protect marine ecosystems."
+          />
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="photo">
+          <img
+            class="grid-image"
+            src="image/img-12.jpg"
+            alt="BlueBin Aquaculture"
+            data-description="Blue Bin is committed to reshaping the aquaculture industry by championing sustainable practices and fostering innovation. With wild fish stocks dwindling and global seafood demand rising, traditional aquaculture methods pose significant threats to marine habitats and fish populations. "
+          />
+        </div>
+
+        <div class="photo">
+          <img
+            class="grid-image"
+            src="image/img-13.jpg"
+            alt="Kelp Forest recovery"
+            data-description="Blue Bin collaborated with various organizations to enact a trawling ban, leading to the recovery of kelp forests and the protection of marine life and habitats."
+          />
+        </div>
+
+        <div class="photo">
+          <img
+            class="grid-image"
+            src="image/img-14.jpg"
+            alt="BlueBin Oyster Habitat Restoration"
+            data-description="Blue Marine Foundation, in collaboration with partners, is restoring oyster habitats in the Solent by deploying mature oysters in cages to release larvae, establishing nursery systems, and creating sanctuary sites to foster natural recruitment and biodiversity."
+            "
+          />
+        </div>
+
+        <div class="photo">
+          <img
+            class="grid-image"
+            src="image/img-15.jpg"
+            alt="Solent Seascape project"
+            data-description="The collaboration for the Solent Seascape Project involves a partnership between various stakeholders, including local communities, government agencies, environmental organizations, and academic institutions. Each partner brings unique expertise and resources to the project, enabling a comprehensive approach to conservation and restoration efforts in the Solent region."
+          />
+        </div>
+
+        <div class="photo">
+          <img
+            class="grid-image"
+            src="image/img-16.jpg"
+            alt="Blue Surgeon Project"
+            data-description="Blue Bin's initiative aims to reverse the drastic decline of native sturgeon species in the UK, focusing on habitat restoration in the greater Severn estuary system and advocating for enhanced legislative protection. "
+          />
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div id="detail-pane" class="detail-pane">
+    <div id="detail-content">
+      <button id="closeButton" class="btn-close" aria-label="Close image detail pane">
+        <i class="fa fa-times"></i> 
+      </button>
+      <div class="customization-options">
+        <div class="color-picker">
+          <label for="text-color">Text Color:</label>
+          <input type="color" id="text-color">
+        </div>
+        <div class="font-style-select">
+          <label for="font-style">Font Style:</label>
+          <select id="font-style">
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Cambria">Cambria</option>
+            <option value="Georgia">Georgia</option>
+          </select>
+        </div>
+        <div class="color-picker">
+          <label for="bg-color">Background Color:</label>
+          <input type="color" id="bg-color">
+        </div>
+      </div>
+
+      <div id="image-detail">
+        <img id="large-image" src="" alt="" />
+        <div id="image-description"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>BlueBin</h4>
+        <ul>
+          <li><a href="home.html">home</a></li>
+              <li><a href="team.html">about us</a></li>
+              <li><a href="sitemap.html">sitemap</a></li>
+              <li><a href="shop.html">shop</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>page editors</h4>
+        <ul>
+          <li><a href="editor-chamidu.html">chamidu</a></li>
+          <li><a href="editor-tharushi.html">tharushi</a></li>
+          <li><a href="editor-kasun.html">kasun</a></li>
+          <li><a href="editor-kaveesha.html">kaveesha</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

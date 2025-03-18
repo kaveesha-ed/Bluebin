@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #091831;
+}
+@media screen and (min-width: 768px) {
+  .nav-links {
+  flex-direction: row;
+}
+  }
+  
+  .anchor-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: slideIn 0.5s ease forwards;
+  opacity: 0;
+  margin-bottom: 150px;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.scroll-button {
+  display: inline-block;
+  padding: 10px 700px;
+  background-color: #4a90e2;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.scroll-button:hover {
+  background-color: #032b61;
+}
+
+h2{
+  color: white;
+  margin-top: 50px;
+  text-align: center;
+}
+
+section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 100px;
+    color: #fff;
+}
+.container{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-title{
+    font-size: 3em;
+    margin-bottom: 100px;
+}
+.content{
+    position: relative;
+    width: 1150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content .image{
+    position: relative;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+.content .image img{
+    z-index: 111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 440px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.content .text-box{
+    z-index: 222;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    max-width: 700px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    transform: translate(-80px, 50px);
+}
+.content .text-box h3{
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+.section-title{
+    font-size: 2em;
+    margin-bottom: 100px;
+}
+.info h4{
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+.info{
+    width: 1000px;
+    margin-left: 50px;
+    margin-right: 100px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    max-width: 700px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    
+}

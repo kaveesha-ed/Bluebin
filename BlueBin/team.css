@@ -1,0 +1,72 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-image: url(image/bg.jpg);
+  background-size: cover;
+}
+h1 {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 50px;
+}
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+.wrapper {
+  width: 320px;
+  height: 480px;
+  margin: 40px;
+  position: relative;
+}
+.student {
+  height: 350px;
+  width: 340px;
+  border: 5px solid #111140;
+  background-size: cover;
+}
+.one {
+  background: url(image/kasun.jpg);
+  background-size: 350px 400px;
+}
+.two {
+  background: url(image/chamidu.jpg);
+  background-size: 350px 350px;
+}
+.three {
+  background: url(image/kaveesha.jpg);
+  background-size: 350px 350px;
+}
+.four {
+  background: url(image/tharushi.jpg);
+  background-size: 350px 350px;
+}
+.caption {
+  background-color: white;
+  height: 130px;
+  width: 350px;
+  font-size: 15px;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-top: 10px;
+  transform-style: preserve-3d;
+  transform: rotateX(-180deg);
+  transform-origin: top;
+  z-index: -1;
+  position: relative;
+  transition: 1s;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper:hover .caption {
+  transform: rotateX(0deg);
+}
+.caption > span:first-child {
+  text-align: center;
+}

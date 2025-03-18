@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style>
+      /* Add your new styles and animations here */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f3f3f3;
+        color: #333; /* Added for better readability */
+      }
+
+      .heading {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: black;
+        margin-bottom: 20px; /* Added for spacing */
+      }
+
+      .myDetails {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center; /* Center align the details */
+        max-width: 400px; /* Added for better layout */
+        margin: 0 auto; /* Center align the details */
+      }
+
+      .myDetails img {
+        width: 150px;
+        border-radius: 50%;
+        margin-bottom: 10px; /* Added for spacing */
+      }
+
+      .myDetails p {
+        margin: 5px 0; /* Adjusted for spacing */
+      }
+
+      .Sitemap,
+      .Gallery,
+      .Content_Editor {
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        color: #333;
+        margin-top: 0; /* Added to remove default margin */
+      }
+
+      .Sitemap a,
+      .Gallery a,
+      .Content_Editor a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .Sitemap a:hover,
+      .Gallery a:hover,
+      .Content_Editor a:hover {
+        text-decoration: underline;
+      }
+
+      #toTopButton {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: #007bff;
+        text-decoration: none;
+        display: none;
+        cursor: pointer;
+      }
+
+      #toTopButton:hover {
+        text-decoration: none;
+        color: #0056b3;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 1s ease-in-out;
+      }
+    </style>
+    <title>Page Editor</title>
+  </head>
+  <body class="fade-in">
+    <div class="heading">
+      <h1>Page Editor</h1>
+      <br />
+      <div class="myDetails">
+        <img src="image/profile.jpg" alt="My pic" />
+        <p>Name: <span>Kasun wathsala</span></p>
+        <p>Role: <span>Student 1</span></p>
+        <p>UOW Id: <span> W2052957</span></p>
+        <p>IIT Id: <span> 20222191</span></p>
+        <p>The following pages were edited by me</p>
+      </div>
+    </div>
+    <div class="Sitemap">
+      <h2>SPLASH SCREEN</h2>
+      <p>
+        Create a splash screen for the website that prominently features the
+        website title and mission, along with the names of the group members.
+        The splash screen should serve as an initial introduction to the site.
+        After a duration of 4 seconds, it should automatically redirect users to
+        the Home page, ensuring a seamless transition into the main content.
+        Additionally, the splash screen could contain an animated image
+        indicating that the home page is loading.
+      </p>
+      <a href="index.html">Link to Splash Screen</a>
+    </div>
+    <div class="Gallery">
+      <h2>SHOP</h2>
+      <p>
+        Develop a product showcase page for the website, showcasing products
+        related to the theme, with organized layouts displaying images, titles,
+        descriptions, and prices. Users can customize purchases (e.g., size,
+        color) and add items to their cart with an "Add to Cart" button. An
+        order summary captures selected product details, and users must select
+        at least one product before proceeding to checkout, triggering a
+        validation message if they attempt to proceed without making a
+        selection.
+      </p>
+      <a href="shop.html">Link to Shop page</a>
+    </div>
+    <div class="Content_Editor">
+      <h2>CONTENT PAGE AND PAGE EDITOR</h2>
+      <p>
+        I created this page editor and template by selecting four subtopics from
+        the theme Zero Hunger and collecting data suitable for content pages.
+      </p>
+      <a href="content-kasun.html">Link to content page</a>
+    </div>
+    <a href="#" id="toTopButton">&#x21e7;</a>
+
+    <script>
+      window.onload = function () {
+        // Get the button
+        var toTopButton = document.getElementById("toTopButton");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+          scrollFunction();
+        };
+
+        function scrollFunction() {
+          if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+          ) {
+            toTopButton.style.display = "block";
+          } else {
+            toTopButton.style.display = "none";
+          }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        toTopButton.onclick = function () {
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        };
+      };
+    </script>
+  </body>
+</html>

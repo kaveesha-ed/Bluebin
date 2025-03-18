@@ -1,0 +1,296 @@
+/* Accessibility section */
+.accessibility-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Color mode select */
+#colorModeSelect {
+  background-color: transparent;
+  color: white;
+  border: 2px solid transparent;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  font-size: 16px;
+}
+
+#colorModeSelect:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+}
+
+/* Color picker */
+.color-picker-container,
+.color-picker,
+.font-style-select {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.color-picker label,
+.font-style-select label {
+  margin-right: 10px;
+  font-size: 1rem;
+  color: white;
+}
+
+.color-picker input[type="color"] {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #000);
+  padding: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.color-picker input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-picker input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+/* Font style selection */
+.font-style-select select {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #444;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.font-style-select select:focus {
+  border: 2px solid #007bff;
+}
+
+.font-style-select select option {
+  background-color: #444;
+  color: white;
+}
+
+/* Close button */
+#closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+#closeButton:hover {
+  color: #ff4500;
+}
+
+/* -------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 3s ease;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+/* Header background image */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background-image: url("image/img-17.jpeg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+/* Welcome section */
+.welcome-section {
+  padding: 20px;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-section h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.welcome-section h2 {
+  font-size: 24px;
+}
+
+/* Slider section */
+.slider-section {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.slider-item {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-item.active {
+  display: block;
+}
+
+/* Slider text */
+.slider-text {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.256);
+  padding: 10px;
+  max-width: 350px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.slider-text h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-family: "cambria", Arial, sans-serif;
+}
+
+.slider-text p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 2;
+  text-align: left;
+  font-family: "arial", sans-serif;
+}
+
+/* Gallery section */
+.gallery-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: rgb(11, 49, 83);
+  font-family: "cambria", Arial, sans-serif;
+  padding-top: 40px;
+  font-size: 25px;
+}
+
+.column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.photo {
+  flex: 1 0 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.photo img:hover {
+  transform: scale(1.05);
+}
+
+/* Detail pane */
+.detail-pane {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto;
+}
+
+/* Hide scrollbar */
+.detail-pane::-webkit-scrollbar {
+  display: none;
+}
+
+#detail-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+#large-image {
+  max-width: 100%;
+  max-height: 50%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+#image-description {
+  color: white;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 17px;
+}
+
+/* Light mode */
+.light-mode {
+  background-color: #ffffff;
+  color: #171717;
+}
+
+/* Dark mode */
+.dark-mode {
+  background-color: #020211;
+  color: #ffffff;
+}
+
+.dark-mode .title {
+  color: white;
+}

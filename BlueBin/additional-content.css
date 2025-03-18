@@ -1,0 +1,130 @@
+* {
+  /* box-sizing: border-box; */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-image: url(image/img-29.png);
+  background-color: #333333;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.content-wrapper {
+  padding: 20px;
+}
+
+#page-headings,
+#page-text {
+  text-align: center;
+}
+
+h1 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 36px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+h2 {
+  padding-top: 20px;
+  color: #333333;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px auto;
+}
+
+.card {
+  width: 300px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin: 0;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  margin: 0;
+  color: #666666;
+  line-height: 1.5;
+  height: 80px;
+  overflow: hidden;
+}
+
+.card a {
+  display: block;
+  text-decoration: none;
+  background-color: #0ca29d;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.card a:hover {
+  background-color: #45a049;
+}
+
+/* Media queries for different devices */
+
+@media only screen and (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  body {
+    background-size: auto 100vh;
+  }
+}
